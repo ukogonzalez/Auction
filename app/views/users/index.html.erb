@@ -1,0 +1,24 @@
+<%= form_for @user do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <br />
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <br />
+
+  <%= f.button %>
+
+<% end %>
+
+<h2>Users</h2>
+<ul>
+  <%@users.each do |user|%>
+    <li>
+      <%= link_to user.name, {action: 'show',id: user.id}%>
+    </li>
+  <% end %>
+</ul>
